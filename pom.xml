@@ -56,6 +56,7 @@
                 </configuration>
 			</plugin>
 		</plugins>
+		 <finalName>shoppingcart</finalName>
 	</build>
 
 </project>
