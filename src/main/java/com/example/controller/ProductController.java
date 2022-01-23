@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +44,11 @@ public class ProductController {
 		
 	}
 	
+	@RequestMapping(value="/product/{id}", method=RequestMethod.GET)
+	public Optional<Product> getProductById(@PathVariable("id") Long id) {
+		return  productService.findByProductId(id);
+		
+	}
 	
 	
 }
