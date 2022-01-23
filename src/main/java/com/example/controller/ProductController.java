@@ -38,11 +38,16 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/product/{productId}", method=RequestMethod.DELETE)
-	public void addproduct(@PathVariable("productId") Long Id) {
+	public void deleteproduct(@PathVariable("productId") Long Id) {
 		 productService.deleteByProductId(Id);
 		
 	}
 	
+	@RequestMapping(value="/product", method=RequestMethod.DELETE)
+	public void deleteProduct() {
+		 productService.deleteAllProducts();
+		
+	}
 	
 	
 }
