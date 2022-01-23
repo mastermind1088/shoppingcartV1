@@ -39,14 +39,19 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/product/{productId}", method=RequestMethod.DELETE)
-	public void addproduct(@PathVariable("productId") Long Id) {
+	public void deleteproduct(@PathVariable("productId") Long Id) {
 		 productService.deleteByProductId(Id);
 		
 	}
 	
+
 	@RequestMapping(value="/product/{id}", method=RequestMethod.GET)
 	public Optional<Product> getProductById(@PathVariable("id") Long id) {
 		return  productService.findByProductId(id);
+}
+	@RequestMapping(value="/product", method=RequestMethod.DELETE)
+	public void deleteProduct() {
+		 productService.deleteAllProducts();
 		
 	}
 	
